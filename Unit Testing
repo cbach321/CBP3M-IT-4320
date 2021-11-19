@@ -1,0 +1,36 @@
+import unittest
+
+class UnitTesting(unittest.TestCase):
+    
+    def symbol_test(self):
+        self.assertTrue(self.isalpha())
+        self.assertFalse(self.isalpha())
+
+        self.assertEqual(TestCase.isupper())
+        self.assertFalse(TestCase.isupper())
+
+        if len(self) > 7 or len(self) < 1:
+            return ValueError("Must be a maximum of 7 characters and a minimium of 1.")
+        
+
+    def time_test(self):
+        self.assertTrue(self.isnumeric())
+        self.assertFalse(self.isnumeric())
+
+        if len(self) > 4 or len(self) < 1:
+            return ValueError("Must be between 1 and 4.")
+
+    def chart_test(self):
+        self.assertTrue(self.isnumeric())
+        self.assertFalse(self.isnumeric())
+
+        if len(self) > 2 or len(self) < 1:
+            return ValueError("Must be either 1 or 2.")
+
+    def date_test(self):
+        format = "%Y-%m-%d"
+        try:
+            datetime.strptime(self, format)
+            print("OK")
+        except ValueError:
+            print("Incorrectformat.")
